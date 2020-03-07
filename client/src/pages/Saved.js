@@ -37,9 +37,8 @@ class Saved extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1 className="text-center">
-                <strong>(React) Google Books Search</strong>
+                <strong>Saved search page!</strong>
               </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
             </Jumbotron>
           </Col>
         </Row>
@@ -69,8 +68,8 @@ class Saved extends Component {
                   ))}
                 </List>
               ) : (
-                <h2 className="text-center">No Saved Books</h2>
-              )}
+                  <h2 className="text-center">No Saved Books</h2>
+                )}
             </Card>
           </Col>
         </Row>
