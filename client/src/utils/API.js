@@ -1,21 +1,11 @@
 import axios from "axios";
-///UPDATE WITH NEW API FOR MOUNTAIN SEARCH
 
+const BASEURL = "https://api.worldweatheronline.com/premium/v1/ski.ashx";
+const APIKEY = "?api_key=9b9b38a8caa54847ab201942200403&q=47.12,13.13&format=json";
+
+// Export an object with a "search" method that searches the Giphy API for the passed query
 export default {
-  // Gets books from the Google API
-  getBooks: function (q) {
-    return axios.get("/api/google", { params: { q: "title:" + q } });
-  },
-  // Gets all saved books
-  getSavedBooks: function () {
-    return axios.get("/api/books");
-  },
-  // Deletes the saved book with the given id
-  deleteBook: function (id) {
-    return axios.delete("/api/books/" + id);
-  },
-  // Saves an book to the database
-  saveBook: function (bookData) {
-    return axios.post("/api/books", bookData);
+  search: function (query) {
+    return axios.get(BASEURL + query + APIKEY);
   }
 };
