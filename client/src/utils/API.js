@@ -1,11 +1,30 @@
 import axios from "axios";
 
-const BASEURL = "https://api.worldweatheronline.com/premium/v1/ski.ashx";
-const APIKEY = "?api_key=9b9b38a8caa54847ab201942200403&q=47.12,13.13&format=json";
+const q = "New+York";
+const APIKEY = "9b9b38a8caa54847ab201942200403";
+const BASEURL = "http://api.worldweatheronline.com/premium/v1/ski.ashx?q=" + q + "&key=" + APIKEY + "&format=json";
 
-// Export an object with a "search" method that searches the Giphy API for the passed query
 export default {
   search: function (query) {
-    return axios.get(BASEURL + query + APIKEY);
+    return axios.get(BASEURL)
+      .then(function (res) {
+        console.log(res.data);
+      });
   }
 };
+
+
+// const axios = require("axios");
+
+
+// const q = "New+York";
+// const BASEURL = "http://api.worldweatheronline.com/premium/v1/ski.ashx?q=" + q + "&key=" + APIKEY + "&format=json";
+
+
+
+// // Export an object with a "search" method that searches the weather API for the passed query
+
+// axios.get(BASEURL)
+//   .then(function (res) {
+//     console.log(res.data);
+//   });

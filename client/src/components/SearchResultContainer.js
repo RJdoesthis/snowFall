@@ -3,6 +3,7 @@ import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
 
+
 class SearchResultContainer extends Component {
   state = {
     search: "",
@@ -11,12 +12,12 @@ class SearchResultContainer extends Component {
 
   // When this component mounts, search the Worlwide Online API for general weather data
   componentDidMount() {
-    this.searchWWO("New+York");
+    this.searchWWO("");
   }
 
   searchWWO = query => {
     API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+      .then(res => this.setState({ results: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -28,7 +29,7 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form is submitted
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchWWO(this.state.search);
