@@ -18,6 +18,7 @@ export default {
 
 
 // const q = "New+York";
+// const APIKEY = "9b9b38a8caa54847ab201942200403";
 // const BASEURL = "http://api.worldweatheronline.com/premium/v1/ski.ashx?q=" + q + "&key=" + APIKEY + "&format=json";
 
 
